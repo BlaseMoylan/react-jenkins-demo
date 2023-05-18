@@ -17,7 +17,12 @@ pipeline{
         }
         stage('Docker'){
             steps{
+                script{
+                    def dockertool = name: 'docker-latest-tool', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
+                    env.PATH = "${dockertool}/bin:${env.PATH}"
+                }
                 sh 'echo "Dockerizing the application..." '
+                
             }
         }
         // stage('Build'){
