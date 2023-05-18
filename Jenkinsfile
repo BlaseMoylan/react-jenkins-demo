@@ -23,7 +23,7 @@ pipeline{
                 }
                 sh '''
                 echo "Dockerizing the application..."
-                docker build -t blasemoylan/react-jenkins-docker:latest
+                docker build -t blasemoylan/react-jenkins-docker:latest .
                 '''
                 
             }
