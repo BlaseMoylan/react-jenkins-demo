@@ -33,7 +33,7 @@ pipeline{
                 }
 
                         // Now that we have logged in with the credentials above, we can do authenticated actions like pushing
-                sh "docker push react-jenkins-docker"
+                sh "docker push blasemoylan/react-jenkins-docker"
                     }
         }
         
