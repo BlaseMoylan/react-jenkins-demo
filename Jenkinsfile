@@ -25,8 +25,16 @@ pipeline{
                 echo "Dockerizing the application..."
                 docker build -t blasemoylan/react-jenkins-docker:latest .
                 '''
-                
-            }
+                // withcredentials
+                // push
+                withCredentials([usernamePassword(credentialsId: 'personal-docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
+                // Use the USERNAME and PASSWORD environment variables are available within this block  
+                            sh 'docker login -u ${DOCKER_USERNAME} -p ${DOCKER_PASSWORD}'
+                }
+
+                        // Now that we have logged in with the credentials above, we can do authenticated actions like pushing
+                // sh "docker push <SOME IMAGE NAME>"
+                    }
         }
         // stage('Build'){
         //     steps{
