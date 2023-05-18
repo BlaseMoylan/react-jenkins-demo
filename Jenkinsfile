@@ -24,6 +24,7 @@ pipeline{
                 
                 sh 'docker build -t --name=blasemoylan/react-jenkins blasemoylan/react-jenkins-docker:latest .'
         }
+        }
         stage('Push Docker Image'){
             steps{
                 withCredentials([usernamePassword(credentialsId: 'personal-docker-credentials', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
@@ -38,4 +39,4 @@ pipeline{
         
     }
 }
-}
+
