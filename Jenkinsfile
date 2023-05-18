@@ -22,7 +22,7 @@ pipeline{
         stage('Build Docker Image'){
             steps{
                 
-                sh 'docker build -t --name = blasemoylan/react-jenkins blasemoylan/react-jenkins-docker:latest .'
+                sh 'docker build -t blasemoylan/react-jenkins-docker:latest .'
         }
         }
         stage('Push Docker Image'){
@@ -33,7 +33,7 @@ pipeline{
                 }
 
                         // Now that we have logged in with the credentials above, we can do authenticated actions like pushing
-                sh "docker push blasemoylan/react-jenkins"
+                sh "docker push build"
                     }
         }
         
