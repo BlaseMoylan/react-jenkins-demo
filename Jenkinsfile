@@ -21,7 +21,7 @@ pipeline{
                     def dockertool = name: 'docker-latest-tool', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
                     env.PATH = "${dockertool}/bin:${env.PATH}"
                 }
-                sh 'echo "Dockerizing the application..." '
+                sh 'echo "Dockerizing the application..."'
                 
             }
         }
