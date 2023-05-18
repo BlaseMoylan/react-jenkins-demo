@@ -22,7 +22,7 @@ pipeline{
         stage('Build Docker Image'){
             steps{
                 
-                sh 'docker build -t --name= blasemoylan/react-jenkins blasemoylan/react-jenkins-docker:latest .'
+                sh 'docker build -t --name = blasemoylan/react-jenkins blasemoylan/react-jenkins-docker:latest .'
         }
         }
         stage('Push Docker Image'){
