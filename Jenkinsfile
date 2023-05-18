@@ -21,7 +21,10 @@ pipeline{
                     def dockertool = tool name: 'docker-latest-tool', type: 'org.jenkinsci.plugins.docker.commons.tools.DockerTool'
                     env.PATH = "${dockertool}/bin:${env.PATH}"
                 }
-                sh 'echo "Dockerizing the application..."'
+                sh '''
+                echo "Dockerizing the application..."
+                docker build -t blasemoylan/react-jenkins-docker:latest
+                '''
                 
             }
         }
